@@ -22,21 +22,18 @@ class BinarySearchTree:
 
         store = []
         store.append(self)
-        # for i in range(len(store)):
-        #     print(store[i].value)
-        #     print("end of store")
 
         while len(store) > 0:
 
             current = store.pop(0)
-            print(current.value)
+
             cb(current.value)
+
+            # add child Node if exist
             if current.left is not None:
-                print("going left")
-                store.append(self.left)
+                store.append(current.left)
             if current.right is not None:
-                print("going right")
-                store.append(self.right)
+                store.append(current.right)
 
     def insert(self, value):
         new_tree = BinarySearchTree(value)
@@ -89,6 +86,7 @@ l.insert(10)
 # l.insert(11)
 
 
+# l.depth_first_for_each(cb)
 l.breadth_first_for_each(cb)
 print(arr)
 # [5, 3, 10, 4, 9, 11])
