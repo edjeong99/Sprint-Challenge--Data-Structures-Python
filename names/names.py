@@ -13,15 +13,21 @@ f.close()
 
 duplicates = []
 
-
+# sort each name lists alphabetically
 names_1.sort()
 names_2.sort()
 
+# assign initial values
 len_name1 = len(names_1)
 len_name2 = len(names_2)
 
 index_name1 = 0
 index_name2 = 0
+
+# below compare each item from both list.
+# since list are alphabetized, if one is less than other
+# that doesn't need to be compared again.
+# while loop ends when one of the list reached the end.
 
 while index_name1 < len_name1 and index_name2 < len_name2:
     if names_1[index_name1] == names_2[index_name2]:
