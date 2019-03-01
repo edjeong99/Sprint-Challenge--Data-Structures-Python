@@ -10,13 +10,35 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
+
 duplicates = []
+
+
+names_1.sort()
+names_2.sort()
+
+len_name1 = len(names_1)
+len_name2 = len(names_2)
+
+index_name1 = 0
+index_name2 = 0
+
+while index_name1 < len_name1 and index_name2 < len_name2:
+    if names_1[index_name1] == names_2[index_name2]:
+        duplicates.append(names_1[index_name1])
+        index_name2 += 1
+        index_name1 += 1
+    elif names_1[index_name1] > names_2[index_name2]:
+        index_name2 += 1
+    else:
+        index_name1 += 1
+
+'''
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
             duplicates.append(name_1)
-
+'''
 end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
-
+print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print(f"runtime: {end_time - start_time} seconds")
