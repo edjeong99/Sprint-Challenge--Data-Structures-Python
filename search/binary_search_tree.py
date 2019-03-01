@@ -19,7 +19,9 @@ class BinarySearchTree:
             self.right.depth_first_for_each(cb)
 
     def breadth_first_for_each(self, cb):
+        # doing it as stretch goal
 
+        # store keeps which Node is next to cb, FIFO
         store = []
         store.append(self)
 

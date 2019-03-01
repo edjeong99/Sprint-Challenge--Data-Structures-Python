@@ -29,6 +29,8 @@ index_name2 = 0
 # that doesn't need to be compared again.
 # while loop ends when one of the list reached the end.
 
+# I think this should satisfy stretch goal
+
 while index_name1 < len_name1 and index_name2 < len_name2:
     if names_1[index_name1] == names_2[index_name2]:
         duplicates.append(names_1[index_name1])
